@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+
+  /* Custom Color Tokens - Nepal Organic & Warm Palette */
+  --color-brand-green: #1b4332;         /* Deep Forest Green */
+  --color-brand-green-medium: #2d6a4f;  /* Medium Forest Green */
+  --color-brand-green-light: #52b788;   /* Soft Leaf Green */
+  --color-brand-green-pale: #d8f3dc;    /* Very pale green */
+  
+  --color-brand-terracotta: #b7094c;     /* Organic crimson/terracotta */
+  --color-brand-terracotta-dark: #890620;/* Dark crimson */
+  --color-brand-terracotta-light: #a01a58;/* Bright terracotta tint */
+  
+  --color-brand-gold: #e9c46a;          /* Nepali mustard/gold */
+  --color-brand-gold-dark: #e76f51;     /* Warm copper */
+  --color-brand-cream: #fbf9f4;         /* Rich Off-white cream */
+  --color-brand-sand: #f4ede1;          /* Earthy sand background */
+  --color-brand-card: #ffffff;
+  
+  /* Micro-animations and utility tokens */
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-pulse-subtle: pulse-subtle 2s infinite;
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  }
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-brand-green-medium) 100%);
+  }
+  .bg-gradient-sunset {
+    background: linear-gradient(135deg, #e76f51 0%, #b7094c 100%);
+  }
+}
+
+/* Custom Base Styling for Premium Vibe */
+body {
+  background-color: var(--color-brand-cream);
+  color: #2b2b2b;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Smooth micro-interactions & custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-sand);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-green-light);
+}
+
+/* Float Animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.dark-glass-panel {
+  background: rgba(27, 67, 50, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
